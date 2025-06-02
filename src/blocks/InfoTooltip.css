@@ -1,0 +1,133 @@
+.tooltip {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .tooltip__box {
+    padding: 30px;
+    position: relative;
+    z-index: 1001;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tooltip__image {
+    width: 430px;
+    height: auto;
+  }
+  
+  .tooltip__close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .tooltip__close-button:hover {
+    color: #333;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .tooltip {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1000;
+  }
+  
+  .tooltip__box {
+    padding: 30px;
+    position: relative;
+    z-index: 1001;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tooltip__image {
+    width: 430px;
+    height: auto;
+  }
+  
+  .tooltip__close-button {
+    position: absolute;
+    top: -20px; 
+    right: 0;
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .tooltip__close-button:hover {
+    color: #333;
+  }
+  
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  @media screen and (max-width: 320px) {
+    .tooltip__image {
+      width: 280px;
+      height: 308px;
+    }
+  
+    .tooltip__close-button {
+      font-size: 50px;
+      top: -20px;
+      right: 139px;
+      color: white;
+    }
+
+    .tooltip__close-button:hover{
+      opacity: 0.8;
+    }
+  
+    .tooltip__box {
+      padding: 20px;
+    }
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 768px) {
+    .tooltip__image {
+      width: 320px;
+      height: auto;
+    }
+  
+    .tooltip__close-button {
+      font-size: 30px;
+      top: -20px;
+      right: 0;
+    }
+  
+    .tooltip__box {
+      padding: 25px;
+    }
+  }
+  

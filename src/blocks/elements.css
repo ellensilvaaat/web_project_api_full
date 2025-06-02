@@ -1,0 +1,166 @@
+.elements {
+  padding-left: 200px;
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 28.6% 28.6% 28.6%;
+  grid-template-rows: auto auto;
+  column-gap: 17px;
+  row-gap: 20px;
+  position: relative;
+}
+
+.element {
+  width: 17.625rem;
+  position: relative;
+}
+
+.element__rectangle {
+  position: absolute;
+  margin: 0;
+}
+
+.element__local {
+  position: relative;
+  margin: 0;
+  width: 17.625rem;
+  height: 17.625rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.element__conteiner {
+  display: grid;
+  grid-template-columns: auto 21px;
+  gap: 10px;
+  padding-left: 21px;
+  align-items: center;
+  justify-content: space-between;
+  width: 15.375rem;
+}
+
+.element__title {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.element__likee:hover {
+  opacity: 0.7;
+}
+
+.element__like:hover {
+  opacity: 0.7;
+}
+
+.element__likee {
+  display: none;
+  position: relative;
+  margin: 0;
+  width: 21px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.element__like {
+  position: relative;
+  margin: 0;
+  width: 21px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.element__delete {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 3;
+}
+
+@media screen and (max-width: 320px) {
+  .elements {
+    padding-left: 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .element {
+    width: 17.625rem;
+    height: 22.5625rem;
+  }
+
+  .element__local {
+    width: 17.625rem;
+    height: 17.625rem;
+  }
+
+  .element__conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 21px;
+  }
+
+  .element__title {
+    font-size: 24px;
+    font-weight: 900;
+    text-align: left;
+  }
+
+  .element__like {
+    width: 21px;
+    height: 19px;
+  }
+
+  .element__likee {
+    width: 21px;
+    height: 19px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .elements {
+    padding: 90px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+
+  .element {
+    width: 17.625rem;
+    height: 22.5625rem;
+  }
+
+  .element__local {
+    width: 17.625rem;
+    height: 17.625rem;
+  }
+
+  .element__conteiner {
+    padding: 5px 10px;
+  }
+
+  .element__title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .element__likee {
+    width: 18px;
+    height: 18px;
+  }
+
+  .element__like {
+    width: 18px;
+    height: 18px;
+  }
+}

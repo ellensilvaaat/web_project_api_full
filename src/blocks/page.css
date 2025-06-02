@@ -1,0 +1,15 @@
+html,
+body {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  background-color: #000000;
+  font-family: "Inter", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "Inter var", sans-serif;
+  }
+}
