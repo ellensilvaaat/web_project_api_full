@@ -6,7 +6,6 @@ import rectangle from "../../../../images/Rectangle.png";
  
 export default function Card({ card, onCardClick, onCardDelete, onCardLike }) {
   const handleLikeClick = () => {
-    console.log("Botão curtida renderizado, card:", card);
     onCardLike(card);
   };
  

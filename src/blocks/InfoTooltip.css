@@ -104,10 +104,6 @@
       right: 139px;
       color: white;
     }
-
-    .tooltip__close-button:hover{
-      opacity: 0.8;
-    }
   
     .tooltip__box {
       padding: 20px;

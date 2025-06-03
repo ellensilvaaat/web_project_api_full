@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-
 import { authorize, register, checkToken } from "./utils/auth";
 import api from "./utils/api";
-
 import CurrentUserContext from "./contexts/CurrentUserContext";
 
 export default function App() {
@@ -20,15 +17,13 @@ export default function App() {
   const [popup, setPopup] = useState("");
   const navigate = useNavigate();
 
-  // Verificar token ao carregar
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
       checkToken(token)
         .then((res) => {
           setIsLoggedIn(true);
-          setCurrentUser({ email: res.data.email }); // salva email
-          navigate("/");
+          setCurrentUser({ email: res.data.email });
         })
         .catch((err) => {
           console.error("Erro ao verificar token:", err);
@@ -37,14 +32,13 @@ export default function App() {
     }
   }, [navigate]);
 
-  // Carrega dados se logado
   useEffect(() => {
     if (isLoggedIn) {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
         .then(([userInfo, cardList]) => {
           setCurrentUser((prev) => ({
             ...userInfo,
-            email: prev.email || "", // preserva o email
+            email: prev.email || "",
           }));
           setCards(cardList);
         })
@@ -61,20 +55,23 @@ export default function App() {
   };
 
   const handleLogin = (email, password) => {
-    return authorize(email, password) // precisa retornar a Promise
+    return authorize(email, password)
       .then((data) => {
         localStorage.setItem("jwt", data.token);
-        setIsLoggedIn(true);
         return checkToken(data.token);
       })
       .then((res) => {
         setCurrentUser({ email: res.data.email });
+        setIsLoggedIn(true);
+        navigate("/"); // ✅ Redireciona imediatamente após login
       })
       .catch((err) => {
         console.error("Erro no login:", err);
-        throw err; // repropaga para o Login.jsx capturar
+        throw err; 
       });
-  }; 
+  };
+  
+
   
   const handleLogout = () => {
     localStorage.removeItem("jwt");
@@ -104,7 +101,7 @@ export default function App() {
     api.addCard(cardData)
       .then((newCard) => {
         setCards([newCard, ...cards]);
-        setPopup(""); // fecha popup
+        setPopup("");
       })
       .catch(console.error);
   };
@@ -158,7 +155,7 @@ export default function App() {
   onCardLike={handleCardLike}
   onCardDelete={handleCardDelete}
   currentUser={currentUser}
-  onUpdateUser={handleUpdateUser}  // ✅ ESSA LINHA É ESSENCIAL
+  onUpdateUser={handleUpdateUser} 
   onUpdateAvatar={handleUpdateAvatar}
 />
           <Footer />

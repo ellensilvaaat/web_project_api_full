@@ -75,5 +75,5 @@
 }
 
 .popup_opened {
-  display: flex; /* Mostra o popup quando ativado */
+  display: flex; 
 }
