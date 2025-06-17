@@ -17,7 +17,7 @@ export default defineConfig([
     files: ["**/*.{js,jsx}"],
     plugins: { react: pluginReact },
     rules: {
-      "react/react-in-jsx-scope": "off", // Se estiver usando React 17+
+      "react/react-in-jsx-scope": "off", 
     },
   },
 ]);
