@@ -1,27 +1,33 @@
 # Web Project API Full
 
-Este é um projeto completo contendo:
+Este projeto é um aplicativo web completo com funcionalidades de autenticação, edição de perfil, gerenciamento de cartões e curtidas, seguindo os padrões do curso de desenvolvimento web da TripleTen.
 
-- **Backend** com Node.js, Express, MongoDB, autenticação com JWT e validações.
-- **Frontend** construído com React, compilado e pronto para ser servido.
+## Tecnologias utilizadas
 
----
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT para autenticação
+- Celebrate (Joi) para validação
+- PM2 para gerenciar processos
+- Nginx como proxy reverso
+- HTTPS com Let's Encrypt
 
-## 📁 Estrutura do Projeto
+## Funcionalidades
 
-web_project_api_full/
-├── .git/ # Repositório Git na raiz
-├── backend/ # Código da API (Node.js + Express)
-├── frontend/ # Build estático do React (compilado com npm run build)
-└── README.md # Este arquivo
+- Registro e login de usuários
+- Atualização de perfil e avatar
+- Criação e exclusão de cartões
+- Curtir e descurtir cartões
 
-## ⚙️ Como rodar o projeto localmente
+## Como acessar
 
-### 1. Backend (Node.js + MongoDB)
+A aplicação está disponível no seguinte domínio:
 
-```bash
-cd backend
-npm install
-npm run dev
+👉 [https://aroundustriple.mooo.com/signin](https://aroundustriple.mooo.com/signin)
 
-https://aroundustriple.mooo.com/signin
+## Observações
+
+- A API está disponível em um subdomínio configurado via Nginx.
+- O projeto foi implementado com variáveis de ambiente seguras no arquivo `.env`.
