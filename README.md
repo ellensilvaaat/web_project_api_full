@@ -31,3 +31,4 @@ A aplicação está disponível no seguinte domínio:
 
 - A API está disponível em um subdomínio configurado via Nginx.
 - O projeto foi implementado com variáveis de ambiente seguras no arquivo `.env`.
+
